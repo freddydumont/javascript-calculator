@@ -284,3 +284,89 @@ eight.addEventListener("click", function () {
 nine.addEventListener("click", function () {
   pressNum(9)
 });
+
+//keyboard event listener using keyCode because replacements are not yet supported
+//by all browsers
+document.addEventListener("keypress", function (e) {
+  console.log(e.keyCode);
+  switch (e.keyCode) {
+    case 48:
+      pressNum(0);
+      break;
+
+    case 49:
+      pressNum(1);
+      break;
+
+    case 50:
+      pressNum(2);
+      break;
+
+    case 51:
+      pressNum(3);
+      break;
+
+    case 52:
+      pressNum(4);
+      break;
+
+    case 53:
+      pressNum(5);
+      break;
+
+    case 54:
+      pressNum(6);
+      break;
+
+    case (55):
+      pressNum(7);
+      break;
+
+    case 56:
+      pressNum(8);
+      break;
+
+    case 57:
+      pressNum(9);
+      break;
+
+    case 44:
+    case 46:
+      decimal();
+      break;
+
+    case 61:
+    case 13:
+      calculate();
+      break;
+
+    case 43:
+      add();
+      break;
+
+    case 45:
+      substract();
+      break;
+
+    case 42:
+      multiply();
+      break;
+
+    case 47:
+      division();
+      break;
+
+    case 37:
+      percentage();
+      break;
+
+    case 177:
+      reverseNum();
+      break;
+
+    case 67:
+    case 99:
+      clear();
+      break;
+  }
+})
