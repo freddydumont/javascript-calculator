@@ -54,6 +54,13 @@ function display() {
 
 }
 
+function screenFlash() {
+  screen.style.display = "none";
+  setTimeout(function () {
+    screen.style.display = "inherit";
+  }, 100);
+}
+
 function clear() {
   val = "0";
   floating = "false";
