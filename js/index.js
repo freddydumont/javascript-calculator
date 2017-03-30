@@ -65,6 +65,7 @@ function screenFlash() {
 
 function clear() {
   val = "0";
+  memVal = "0";
   isFirstZero = true;
   floating = "false";
   screen.className = "";
