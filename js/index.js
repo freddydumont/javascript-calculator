@@ -141,10 +141,18 @@ function multiply() {
 }
 
 function division() {
-  memVal = parseFloat(val);
+  firstDigitAfterOperator = true;
+
+  if (operatorPressed) {
+    calculate();
+    memVal = parseFloat(val);
+  } else {
+    memVal = parseFloat(val);
+    //css border division
+  }
+  screenFlash();
   operator = "division";
   isResult = false;
-  clear();
 }
 
 function percentage() {
