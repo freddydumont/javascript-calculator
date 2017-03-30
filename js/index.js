@@ -70,6 +70,7 @@ function clear() {
   firstDigitAfterOperator = false;
   operatorPressed = false;
   isFirstZero = true;
+  isResult = false;
   floating = "false";
   screen.className = "";
   display();
