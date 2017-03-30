@@ -66,6 +66,8 @@ function screenFlash() {
 function clear() {
   val = "0";
   memVal = "0";
+  firstDigitAfterOperator = false;
+  operatorPressed = false;
   isFirstZero = true;
   floating = "false";
   screen.className = "";
@@ -243,43 +245,43 @@ document.addEventListener("keypress", function (e) {
   console.log(e.keyCode);
   switch (e.keyCode) {
     case 48:
-      pressNum(0);
+      pressNum('0');
       break;
 
     case 49:
-      pressNum(1);
+      pressNum('1');
       break;
 
     case 50:
-      pressNum(2);
+      pressNum('2');
       break;
 
     case 51:
-      pressNum(3);
+      pressNum('3');
       break;
 
     case 52:
-      pressNum(4);
+      pressNum('4');
       break;
 
     case 53:
-      pressNum(5);
+      pressNum('5');
       break;
 
     case 54:
-      pressNum(6);
+      pressNum('6');
       break;
 
     case (55):
-      pressNum(7);
+      pressNum('7');
       break;
 
     case 56:
-      pressNum(8);
+      pressNum('8');
       break;
 
     case 57:
-      pressNum(9);
+      pressNum('9');
       break;
 
     case 44:
