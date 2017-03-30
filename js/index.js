@@ -111,10 +111,18 @@ function add() {
 }
 
 function substract() {
-  memVal = parseFloat(val);
+  firstDigitAfterOperator = true;
+
+  if (operatorPressed) {
+    calculate();
+    memVal = parseFloat(val);
+  } else {
+    memVal = parseFloat(val);
+    //css border minus
+  }
+  screenFlash();
   operator = "minus";
   isResult = false;
-  clear();
 }
 
 function multiply() {
