@@ -25,7 +25,9 @@ var val = "0";
 var floating = false;
 var memVal = 0;
 var operator;
-var isResult = false;
+var operatorPressed = false;
+var firstDigitAfterOperator = false;
+var isFirstZero = true;
 
 function display() {
 
@@ -63,6 +65,7 @@ function screenFlash() {
 
 function clear() {
   val = "0";
+  isFirstZero = true;
   floating = "false";
   screen.className = "";
   display();
@@ -88,10 +91,17 @@ function decimal() {
 }
 
 function add() {
-  memVal = parseFloat(val);
+  firstDigitAfterOperator = true;
+
+  if (operatorPressed) {
+    calculate();
+    memVal = parseFloat(val);
+  } else {
+    memVal = parseFloat(val);
+    //css border plus
+  }
+  screenFlash();
   operator = "plus";
-  isResult = false;
-  clear();
 }
 
 function substract() {
@@ -123,19 +133,10 @@ function percentage() {
 
 function calculate() {
   var temp = 0;
-  //isResult flag used to calculate correctly if user already pressed equal
   switch (operator) {
     case "plus":
-      if (isResult) {
-        val = memVal + parseFloat(val);
-        val = val.toString();
-      } else {
-        temp = parseFloat(val);
-        val = memVal + temp;
-        memVal = temp;
-        val = val.toString();
-        isResult = true;
-      }
+      val = memVal + parseFloat(val);
+      val = val.toString();
       break;
     case "minus":
       if (isResult) {
@@ -178,76 +179,19 @@ function calculate() {
 }
 
 function pressNum(num) {
-  switch (num) {
-    case 0:
-      if (val != "0") {
-        val += "0";
-      }
-      break;
-    case 1:
-      if (val == "0") {
-        val = "1";
-      } else {
-        val += "1";
-      }
-      break;
-    case 2:
-      if (val == "0") {
-        val = "2";
-      } else {
-        val += "2";
-      }
-      break;
-    case 3:
-      if (val == "0") {
-        val = "3";
-      } else {
-        val += "3";
-      }
-      break;
-    case 4:
-      if (val == "0") {
-        val = "4";
-      } else {
-        val += "4";
-      }
-      break;
-    case 5:
-      if (val == "0") {
-        val = "5";
-      } else {
-        val += "5";
-      }
-      break;
-    case 6:
-      if (val == "0") {
-        val = "6";
-      } else {
-        val += "6";
-      }
-      break;
-    case 7:
-      if (val == "0") {
-        val = "7";
-      } else {
-        val += "7";
-      }
-      break;
-    case 8:
-      if (val == "0") {
-        val = "8";
-      } else {
-        val += "8";
-      }
-      break;
-    case 9:
-      if (val == "0") {
-        val = "9";
-      } else {
-        val += "9";
-      }
-      break;
+  if (firstDigitAfterOperator) {
+    val = num;
+    firstDigitAfterOperator = false;
+    operatorPressed = true;
+  } else {
+    if (isFirstZero) {
+      val = num;
+      isFirstZero = false;
+    } else {
+      val += num;
+    }
   }
+
   display();
 }
 
@@ -262,34 +206,34 @@ divide.addEventListener("click", division);
 percent.addEventListener("click", percentage);
 equal.addEventListener("click", calculate);
 zero.addEventListener("click", function () {
-  pressNum(0)
+  pressNum('0')
 });
 one.addEventListener("click", function () {
-  pressNum(1)
+  pressNum('1')
 });
 two.addEventListener("click", function () {
-  pressNum(2)
+  pressNum('2')
 });
 three.addEventListener("click", function () {
-  pressNum(3)
+  pressNum('3')
 });
 four.addEventListener("click", function () {
-  pressNum(4)
+  pressNum('4')
 });
 five.addEventListener("click", function () {
-  pressNum(5)
+  pressNum('5')
 });
 six.addEventListener("click", function () {
-  pressNum(6)
+  pressNum('6')
 });
 seven.addEventListener("click", function () {
-  pressNum(7)
+  pressNum('7')
 });
 eight.addEventListener("click", function () {
-  pressNum(8)
+  pressNum('8')
 });
 nine.addEventListener("click", function () {
-  pressNum(9)
+  pressNum('9')
 });
 
 //keyboard event listener using keyCode because replacements are not yet supported
