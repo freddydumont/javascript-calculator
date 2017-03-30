@@ -126,10 +126,18 @@ function substract() {
 }
 
 function multiply() {
-  memVal = parseFloat(val);
+  firstDigitAfterOperator = true;
+
+  if (operatorPressed) {
+    calculate();
+    memVal = parseFloat(val);
+  } else {
+    memVal = parseFloat(val);
+    //css border times
+  }
+  screenFlash();
   operator = "times";
   isResult = false;
-  clear();
 }
 
 function division() {
