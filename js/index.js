@@ -69,6 +69,7 @@ function clear() {
   memVal = "0";
   firstDigitAfterOperator = false;
   operatorPressed = false;
+  operator = "";
   isFirstZero = true;
   isResult = false;
   floating = "false";
