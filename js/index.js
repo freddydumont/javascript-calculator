@@ -28,6 +28,7 @@ var operator;
 var operatorPressed = false;
 var firstDigitAfterOperator = false;
 var isFirstZero = true;
+var isResult = false;
 
 function display() {
 
@@ -105,6 +106,7 @@ function add() {
   }
   screenFlash();
   operator = "plus";
+  isResult = false;
 }
 
 function substract() {
@@ -138,8 +140,16 @@ function calculate() {
   var temp = 0;
   switch (operator) {
     case "plus":
-      val = memVal + parseFloat(val);
-      val = val.toString();
+      if (isResult) {
+        val = memVal + parseFloat(val);
+        val = val.toString();
+      } else {
+        temp = parseFloat(val);
+        val = memVal + temp;
+        memVal = temp;
+        val = val.toString();
+        isResult = true;
+      }
       break;
     case "minus":
       if (isResult) {
