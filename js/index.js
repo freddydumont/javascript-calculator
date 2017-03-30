@@ -61,7 +61,7 @@ function screenFlash() {
   screen.style.display = "none";
   setTimeout(function () {
     screen.style.display = "inherit";
-  }, 100);
+  }, 50);
 }
 
 function clear() {
