@@ -22,9 +22,10 @@ var screen = document.getElementById("screen");
 
 //declare variables for calculations
 var val = "0";
-var floating = false;
 var memVal = 0;
 var operator;
+
+var floating = false;
 var operatorPressed = false;
 var firstDigitAfterOperator = false;
 var isFirstZero = true;
@@ -54,7 +55,6 @@ function display() {
       }
     }
   }
-
 }
 
 function screenFlash() {
@@ -67,13 +67,15 @@ function screenFlash() {
 function clear() {
   val = "0";
   memVal = "0";
+  operator = "";
+  screen.className = "";
+
   firstDigitAfterOperator = false;
   operatorPressed = false;
-  operator = "";
   isFirstZero = true;
   isResult = false;
-  floating = "false";
-  screen.className = "";
+  floating = false;
+
   display();
 }
 
@@ -88,6 +90,12 @@ function reverseNum() {
   }
 }
 
+function percentage() {
+  val = parseFloat(val) / 100;
+  val = val.toString();
+  display();
+}
+
 function decimal() {
   if (!floating) {
     val += ".";
@@ -96,9 +104,21 @@ function decimal() {
   display();
 }
 
-function percentage() {
-  val = parseFloat(val) / 100;
-  val = val.toString();
+
+function pressNum(num) {
+  if (firstDigitAfterOperator) {
+    val = num;
+    firstDigitAfterOperator = false;
+    operatorPressed = true;
+  } else {
+    if (isFirstZero) {
+      val = num;
+      isFirstZero = false;
+    } else {
+      val += num;
+    }
+  }
+
   display();
 }
 
@@ -172,22 +192,6 @@ function calculate() {
   display();
 }
 
-function pressNum(num) {
-  if (firstDigitAfterOperator) {
-    val = num;
-    firstDigitAfterOperator = false;
-    operatorPressed = true;
-  } else {
-    if (isFirstZero) {
-      val = num;
-      isFirstZero = false;
-    } else {
-      val += num;
-    }
-  }
-
-  display();
-}
 
 //declare event listeners
 ac.addEventListener("click", clear);
@@ -241,7 +245,6 @@ nine.addEventListener("click", function () {
 //keyboard event listener using keyCode because replacements are not yet supported
 //by all browsers
 document.addEventListener("keypress", function (e) {
-  console.log(e.keyCode);
   switch (e.keyCode) {
     case 48:
       pressNum('0');
