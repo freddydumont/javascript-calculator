@@ -96,7 +96,8 @@ function decimal() {
   display();
 }
 
-function add() {
+function operate(type) {
+
   firstDigitAfterOperator = true;
 
   if (operatorPressed) {
@@ -104,55 +105,9 @@ function add() {
     memVal = parseFloat(val);
   } else {
     memVal = parseFloat(val);
-    //css border plus
   }
+  operator = type;
   screenFlash();
-  operator = "plus";
-  isResult = false;
-}
-
-function substract() {
-  firstDigitAfterOperator = true;
-
-  if (operatorPressed) {
-    calculate();
-    memVal = parseFloat(val);
-  } else {
-    memVal = parseFloat(val);
-    //css border minus
-  }
-  screenFlash();
-  operator = "minus";
-  isResult = false;
-}
-
-function multiply() {
-  firstDigitAfterOperator = true;
-
-  if (operatorPressed) {
-    calculate();
-    memVal = parseFloat(val);
-  } else {
-    memVal = parseFloat(val);
-    //css border times
-  }
-  screenFlash();
-  operator = "times";
-  isResult = false;
-}
-
-function division() {
-  firstDigitAfterOperator = true;
-
-  if (operatorPressed) {
-    calculate();
-    memVal = parseFloat(val);
-  } else {
-    memVal = parseFloat(val);
-    //css border division
-  }
-  screenFlash();
-  operator = "division";
   isResult = false;
 }
 
@@ -238,10 +193,18 @@ function pressNum(num) {
 ac.addEventListener("click", clear);
 reverse.addEventListener("click", reverseNum);
 point.addEventListener("click", decimal);
-plus.addEventListener("click", add);
-minus.addEventListener("click", substract);
-mult.addEventListener("click", multiply);
-divide.addEventListener("click", division);
+plus.addEventListener("click", function () {
+  operate("plus");
+});
+minus.addEventListener("click", function () {
+  operate("minus");
+});
+mult.addEventListener("click", function () {
+  operate("times");
+});
+divide.addEventListener("click", function () {
+  operate("division");
+});
 percent.addEventListener("click", percentage);
 equal.addEventListener("click", calculate);
 zero.addEventListener("click", function () {
