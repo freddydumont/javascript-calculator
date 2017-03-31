@@ -96,6 +96,12 @@ function decimal() {
   display();
 }
 
+function percentage() {
+  val = parseFloat(val) / 100;
+  val = val.toString();
+  display();
+}
+
 function operate(type) {
 
   firstDigitAfterOperator = true;
@@ -109,12 +115,6 @@ function operate(type) {
   operator = type;
   screenFlash();
   isResult = false;
-}
-
-function percentage() {
-  val = parseFloat(val) / 100;
-  val = val.toString();
-  display();
 }
 
 function calculate() {
@@ -294,19 +294,19 @@ document.addEventListener("keypress", function (e) {
       break;
 
     case 43:
-      add();
+      operate("plus");
       break;
 
     case 45:
-      substract();
+      operate("minus");
       break;
 
     case 42:
-      multiply();
+      operate("times");
       break;
 
     case 47:
-      division();
+      operate("division");
       break;
 
     case 37:
