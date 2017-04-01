@@ -23,7 +23,7 @@ var screen = document.getElementById("screen");
 //declare variables for calculations
 var val = "0";
 var memVal = 0;
-var operator;
+var operator = "";
 
 var operatorPressed = false;
 var firstDigitAfterOperator = false;
@@ -65,7 +65,7 @@ function screenFlash() {
 
 function clear() {
   val = "0";
-  memVal = "0";
+  memVal = 0;
   operator = "";
   screen.className = "";
 
@@ -103,10 +103,11 @@ function decimal() {
 
 
 function pressNum(num) {
-  if (firstDigitAfterOperator) {
+  if (firstDigitAfterOperator || isResult) {
     val = num;
     firstDigitAfterOperator = false;
     operatorPressed = true;
+    isResult = false;
   } else {
     if (isFirstZero) {
       val = num;
@@ -121,17 +122,25 @@ function pressNum(num) {
 
 function operate(type) {
 
-  firstDigitAfterOperator = true;
+  if (!firstDigitAfterOperator) {
 
-  if (operatorPressed) {
-    calculate();
-    memVal = parseFloat(val);
-  } else {
-    memVal = parseFloat(val);
+    if (!isResult) {
+
+      firstDigitAfterOperator = true;
+
+      if (operatorPressed) {
+        calculate();
+        memVal = parseFloat(val);
+      } else {
+        memVal = parseFloat(val);
+      }
+      isResult = false;
+    }
   }
+
   operator = type;
+  //css operator en fonction de type
   screenFlash();
-  isResult = false;
 }
 
 function calculate() {
