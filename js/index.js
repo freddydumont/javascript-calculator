@@ -135,6 +135,8 @@ function operate(type) {
         memVal = parseFloat(val);
       }
       isResult = false;
+    } else {
+      memVal = parseFloat(val);
     }
   }
 
