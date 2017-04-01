@@ -25,7 +25,6 @@ var val = "0";
 var memVal = 0;
 var operator;
 
-var floating = false;
 var operatorPressed = false;
 var firstDigitAfterOperator = false;
 var isFirstZero = true;
@@ -74,7 +73,6 @@ function clear() {
   operatorPressed = false;
   isFirstZero = true;
   isResult = false;
-  floating = false;
 
   display();
 }
@@ -97,11 +95,10 @@ function percentage() {
 }
 
 function decimal() {
-  if (!floating) {
+  if (!/\./.test(val)) {
     val += ".";
-    floating = true;
+    display();
   }
-  display();
 }
 
 
