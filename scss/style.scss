@@ -51,7 +51,10 @@ html {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-table {
+.table {
+  display: table;
+  border-spacing: 0px;
+  border-collapse: separate;
   text-align: center;
   font-size: 18px;
   line-height: 0;
@@ -62,8 +65,17 @@ table {
   user-select: none;
 }
 
-table:hover {
+.table:hover {
   cursor: pointer;
+}
+
+.row {
+  display: table-row;
+}
+
+.cell {
+  display: table-cell;
+  padding: 0;
 }
 
 .container {
@@ -172,11 +184,14 @@ table:hover {
 }
 
 #zero {
-  width: 115px;
   height: $btn-height;
   background-color: $number-color;
-  @include border-right;
   border-radius: 0 0 0 4px;
+}
+
+#empty {
+  @include btn($number-color);
+  @include border-right;
 }
 
 #point {

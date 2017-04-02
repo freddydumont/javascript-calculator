@@ -19,20 +19,31 @@ html {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-table {
+.table {
+  display: table;
+  border-spacing: 0px;
+  border-collapse: separate;
   text-align: center;
   font-size: 18px;
   line-height: 0;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-table:hover {
+.table:hover {
   cursor: pointer;
+}
+
+.row {
+  display: table-row;
+}
+
+.cell {
+  display: table-cell;
+  padding: 0;
 }
 
 .container {
@@ -50,6 +61,7 @@ table:hover {
   color: white;
   text-align: right;
 }
+
 #top p {
   padding: 25px 15px 0 0;
   font-size: 48px;
@@ -205,13 +217,18 @@ table:hover {
 }
 
 #zero {
-  width: 115px;
+  height: 47px;
+  background-color: #E0E0E0;
+  border-radius: 0 0 0 4px;
+}
+
+#empty {
+  width: 57px;
   height: 47px;
   background-color: #E0E0E0;
   border-style: solid;
   border-width: 0 1px 0 0;
   border-color: #9F9F9F;
-  border-radius: 0 0 0 4px;
 }
 
 #point {

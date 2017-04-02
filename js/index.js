@@ -1,5 +1,6 @@
 //get dom elements buttons and screen
 var zero = document.getElementById("zero");
+var empty = document.getElementById("empty");
 var one = document.getElementById("one");
 var two = document.getElementById("two");
 var three = document.getElementById("three");
@@ -224,6 +225,9 @@ divide.addEventListener("click", function () {
 percent.addEventListener("click", percentage);
 equal.addEventListener("click", calculate);
 zero.addEventListener("click", function () {
+  pressNum('0')
+});
+empty.addEventListener("click", function () {
   pressNum('0')
 });
 one.addEventListener("click", function () {
