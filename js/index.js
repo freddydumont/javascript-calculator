@@ -104,14 +104,18 @@ function decimal() {
 
 function pressNum(num) {
   if (firstDigitAfterOperator || isResult) {
-    val = num;
-    firstDigitAfterOperator = false;
-    operatorPressed = true;
-    isResult = false;
+    if (num != '0') {
+      val = num;
+      firstDigitAfterOperator = false;
+      operatorPressed = true;
+      isResult = false;
+    }
   } else {
     if (isFirstZero) {
-      val = num;
-      isFirstZero = false;
+      if (num != '0') {
+        val = num;
+        isFirstZero = false;
+      }
     } else {
       val += num;
     }
