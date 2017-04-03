@@ -1,3 +1,9 @@
+html {
+  background: url("../background.jpg") no-repeat center fixed;
+  background-size: cover;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 .small {
   font-size: 36px !important;
   padding: 40px 10px 0 0 !important;
@@ -11,12 +17,6 @@
 .smallest {
   font-size: 16px !important;
   padding: 55px 10px 0 0 !important;
-}
-
-html {
-  background: url("../background.jpg") no-repeat center fixed;
-  background-size: cover;
-  font-family: Helvetica, Arial, sans-serif;
 }
 
 .table {
@@ -49,6 +49,25 @@ html {
   border-color: #9F9F9F;
 }
 
+.btn-number {
+  width: 57px;
+  height: 47px;
+  background-color: #E0E0E0;
+}
+
+.btn-number-dark {
+  width: 57px;
+  height: 47px;
+  background-color: #D6D6D6;
+}
+
+.btn-operator {
+  width: 57px;
+  height: 47px;
+  background-color: #FF8E02;
+  color: white;
+}
+
 .container {
   width: 231px;
   height: 319px;
@@ -71,131 +90,15 @@ html {
   font-weight: 100;
 }
 
-#ac {
-  width: 57px;
-  height: 47px;
-  background-color: #D6D6D6;
-}
-
-#reverse {
-  width: 57px;
-  height: 47px;
-  background-color: #D6D6D6;
-}
-
-#percent {
-  width: 57px;
-  height: 47px;
-  background-color: #D6D6D6;
-}
-
-#divide {
-  width: 57px;
-  height: 47px;
-  background-color: #FF8E02;
-  color: white;
-}
-
-#seven {
-  width: 57px;
-  height: 47px;
-  background-color: #E0E0E0;
-}
-
-#eight {
-  width: 57px;
-  height: 47px;
-  background-color: #E0E0E0;
-}
-
-#nine {
-  width: 57px;
-  height: 47px;
-  background-color: #E0E0E0;
-}
-
-#mult {
-  width: 57px;
-  height: 47px;
-  background-color: #FF8E02;
-  color: white;
-}
-
-#four {
-  width: 57px;
-  height: 47px;
-  background-color: #E0E0E0;
-}
-
-#five {
-  width: 57px;
-  height: 47px;
-  background-color: #E0E0E0;
-}
-
-#six {
-  width: 57px;
-  height: 47px;
-  background-color: #E0E0E0;
-}
-
-#minus {
-  width: 57px;
-  height: 47px;
-  background-color: #FF8E02;
-  color: white;
-}
-
-#one {
-  width: 57px;
-  height: 47px;
-  background-color: #E0E0E0;
-}
-
-#two {
-  width: 57px;
-  height: 47px;
-  background-color: #E0E0E0;
-}
-
-#three {
-  width: 57px;
-  height: 47px;
-  background-color: #E0E0E0;
-}
-
-#plus {
-  width: 57px;
-  height: 47px;
-  background-color: #FF8E02;
-  color: white;
-}
-
 #zero {
-  width: 57px;
-  height: 47px;
-  background-color: #E0E0E0;
   border-radius: 0 0 0 4px;
   border-right-width: 0;
 }
 
 #empty {
-  width: 57px;
-  height: 47px;
-  background-color: #E0E0E0;
   border-left-width: 0;
 }
 
-#point {
-  width: 57px;
-  height: 47px;
-  background-color: #E0E0E0;
-}
-
 #equal {
-  width: 57px;
-  height: 47px;
-  background-color: #FF8E02;
   border-radius: 0 0 4px 0;
-  color: white;
 }

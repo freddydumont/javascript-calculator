@@ -11,6 +11,12 @@ $btn-height: 47px;
   background-color: $color;
 }
 
+html {
+  background: url("../background.jpg") no-repeat center fixed;
+  background-size: cover;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 //special classes for text size in screen
 .small {
   font-size: 36px !important;
@@ -25,12 +31,6 @@ $btn-height: 47px;
 .smallest {
   font-size: 16px !important;
   padding: 55px 10px 0 0 !important;
-}
-
-html {
-  background: url("../background.jpg") no-repeat center fixed;
-  background-size: cover;
-  font-family: Helvetica, Arial, sans-serif;
 }
 
 .table {
@@ -63,6 +63,19 @@ html {
   border-color: $border-color;
 }
 
+.btn-number {
+  @include btn($number-color);
+}
+
+.btn-number-dark {
+  @include btn($number-color-dark);
+}
+
+.btn-operator {
+  @include btn($operator-color);
+  color: white;
+}
+
 .container {
   width: 231px;
   height: 319px;
@@ -84,91 +97,15 @@ html {
   }
 }
 
-#ac {
-  @include btn($number-color-dark);
-}
-
-#reverse {
-  @include btn($number-color-dark);
-}
-
-#percent {
-  @include btn($number-color-dark);
-}
-
-#divide {
-  @include btn($operator-color);
-  color: white;
-}
-
-#seven {
-  @include btn($number-color);
-}
-
-#eight {
-  @include btn($number-color);
-}
-
-#nine {
-  @include btn($number-color);
-}
-
-#mult {
-  @include btn($operator-color);
-  color: white;
-}
-
-#four {
-  @include btn($number-color);
-}
-
-#five {
-  @include btn($number-color);
-}
-
-#six {
-  @include btn($number-color);
-}
-
-#minus {
-  @include btn($operator-color);
-  color: white;
-}
-
-#one {
-  @include btn($number-color);
-}
-
-#two {
-  @include btn($number-color);
-}
-
-#three {
-  @include btn($number-color);
-}
-
-#plus {
-  @include btn($operator-color);
-  color: white;
-}
-
 #zero {
-  @include btn($number-color);
   border-radius: 0 0 0 4px;
   border-right-width: 0;
 }
 
 #empty {
-  @include btn($number-color);
   border-left-width: 0;
 }
 
-#point {
-  @include btn($number-color);
-}
-
 #equal {
-  @include btn($operator-color);
   border-radius: 0 0 4px 0;
-  color: white;
 }
