@@ -33,6 +33,10 @@ html {
   user-select: none;
 }
 
+.table p {
+  margin-top: 24px;
+}
+
 .table:hover {
   cursor: pointer;
 }

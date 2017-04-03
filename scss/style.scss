@@ -45,6 +45,9 @@ html {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  p {
+    margin-top: 24px;
+  }
 }
 
 .table:hover {
