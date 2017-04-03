@@ -21,8 +21,8 @@ html {
 
 .table {
   display: table;
-  border-spacing: 0px;
-  border-collapse: separate;
+  border-collapse: collapse;
+  border-style: hidden;
   text-align: center;
   font-size: 18px;
   line-height: 0;
@@ -44,6 +44,9 @@ html {
 .cell {
   display: table-cell;
   padding: 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #9F9F9F;
 }
 
 .container {
@@ -72,36 +75,24 @@ html {
   width: 57px;
   height: 47px;
   background-color: #D6D6D6;
-  border-style: solid;
-  border-width: 0 1px 1px 0;
-  border-color: #9F9F9F;
 }
 
 #reverse {
   width: 57px;
   height: 47px;
   background-color: #D6D6D6;
-  border-style: solid;
-  border-width: 0 1px 1px 0;
-  border-color: #9F9F9F;
 }
 
 #percent {
   width: 57px;
   height: 47px;
   background-color: #D6D6D6;
-  border-style: solid;
-  border-width: 0 1px 1px 0;
-  border-color: #9F9F9F;
 }
 
 #divide {
   width: 57px;
   height: 47px;
   background-color: #FF8E02;
-  border-style: solid;
-  border-width: 0 0 1px 0;
-  border-color: #9F9F9F;
   color: white;
 }
 
@@ -109,36 +100,24 @@ html {
   width: 57px;
   height: 47px;
   background-color: #E0E0E0;
-  border-style: solid;
-  border-width: 0 1px 1px 0;
-  border-color: #9F9F9F;
 }
 
 #eight {
   width: 57px;
   height: 47px;
   background-color: #E0E0E0;
-  border-style: solid;
-  border-width: 0 1px 1px 0;
-  border-color: #9F9F9F;
 }
 
 #nine {
   width: 57px;
   height: 47px;
   background-color: #E0E0E0;
-  border-style: solid;
-  border-width: 0 1px 1px 0;
-  border-color: #9F9F9F;
 }
 
 #mult {
   width: 57px;
   height: 47px;
   background-color: #FF8E02;
-  border-style: solid;
-  border-width: 0 0 1px 0;
-  border-color: #9F9F9F;
   color: white;
 }
 
@@ -146,36 +125,24 @@ html {
   width: 57px;
   height: 47px;
   background-color: #E0E0E0;
-  border-style: solid;
-  border-width: 0 1px 1px 0;
-  border-color: #9F9F9F;
 }
 
 #five {
   width: 57px;
   height: 47px;
   background-color: #E0E0E0;
-  border-style: solid;
-  border-width: 0 1px 1px 0;
-  border-color: #9F9F9F;
 }
 
 #six {
   width: 57px;
   height: 47px;
   background-color: #E0E0E0;
-  border-style: solid;
-  border-width: 0 1px 1px 0;
-  border-color: #9F9F9F;
 }
 
 #minus {
   width: 57px;
   height: 47px;
   background-color: #FF8E02;
-  border-style: solid;
-  border-width: 0 0 1px 0;
-  border-color: #9F9F9F;
   color: white;
 }
 
@@ -183,36 +150,24 @@ html {
   width: 57px;
   height: 47px;
   background-color: #E0E0E0;
-  border-style: solid;
-  border-width: 0 1px 1px 0;
-  border-color: #9F9F9F;
 }
 
 #two {
   width: 57px;
   height: 47px;
   background-color: #E0E0E0;
-  border-style: solid;
-  border-width: 0 1px 1px 0;
-  border-color: #9F9F9F;
 }
 
 #three {
   width: 57px;
   height: 47px;
   background-color: #E0E0E0;
-  border-style: solid;
-  border-width: 0 1px 1px 0;
-  border-color: #9F9F9F;
 }
 
 #plus {
   width: 57px;
   height: 47px;
   background-color: #FF8E02;
-  border-style: solid;
-  border-width: 0 0 1px 0;
-  border-color: #9F9F9F;
   color: white;
 }
 
@@ -226,18 +181,12 @@ html {
   width: 57px;
   height: 47px;
   background-color: #E0E0E0;
-  border-style: solid;
-  border-width: 0 1px 0 0;
-  border-color: #9F9F9F;
 }
 
 #point {
   width: 57px;
   height: 47px;
   background-color: #E0E0E0;
-  border-style: solid;
-  border-width: 0 1px 0 0;
-  border-color: #9F9F9F;
 }
 
 #equal {

@@ -11,24 +11,6 @@ $btn-height: 47px;
   background-color: $color;
 }
 
-@mixin border-right-bot {
-  border-style: solid;
-  border-width: 0 1px 1px 0;
-  border-color: $border-color;
-}
-
-@mixin border-bot {
-  border-style: solid;
-  border-width: 0 0 1px 0;
-  border-color: $border-color;
-}
-
-@mixin border-right {
-  border-style: solid;
-  border-width: 0 1px 0 0;
-  border-color: $border-color;
-}
-
 //special classes for text size in screen
 .small {
   font-size: 36px !important;
@@ -53,8 +35,8 @@ html {
 
 .table {
   display: table;
-  border-spacing: 0px;
-  border-collapse: separate;
+  border-collapse: collapse;
+  border-style: hidden;
   text-align: center;
   font-size: 18px;
   line-height: 0;
@@ -76,6 +58,9 @@ html {
 .cell {
   display: table-cell;
   padding: 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $border-color;
 }
 
 .container {
@@ -101,85 +86,69 @@ html {
 
 #ac {
   @include btn($number-color-dark);
-  @include border-right-bot;
 }
 
 #reverse {
   @include btn($number-color-dark);
-  @include border-right-bot;
 }
 
 #percent {
   @include btn($number-color-dark);
-  @include border-right-bot;
 }
 
 #divide {
   @include btn($operator-color);
-  @include border-bot;
   color: white;
 }
 
 #seven {
   @include btn($number-color);
-  @include border-right-bot;
 }
 
 #eight {
   @include btn($number-color);
-  @include border-right-bot;
 }
 
 #nine {
   @include btn($number-color);
-  @include border-right-bot;
 }
 
 #mult {
   @include btn($operator-color);
-  @include border-bot;
   color: white;
 }
 
 #four {
   @include btn($number-color);
-  @include border-right-bot;
 }
 
 #five {
   @include btn($number-color);
-  @include border-right-bot;
 }
 
 #six {
   @include btn($number-color);
-  @include border-right-bot;
 }
 
 #minus {
   @include btn($operator-color);
-  @include border-bot;
   color: white;
 }
 
 #one {
   @include btn($number-color);
-  @include border-right-bot;
 }
 
 #two {
   @include btn($number-color);
-  @include border-right-bot;
 }
 
 #three {
   @include btn($number-color);
-  @include border-right-bot;
 }
 
 #plus {
   @include btn($operator-color);
-  @include border-bot;
   color: white;
 }
 
@@ -191,12 +160,10 @@ html {
 
 #empty {
   @include btn($number-color);
-  @include border-right;
 }
 
 #point {
   @include btn($number-color);
-  @include border-right;
 }
 
 #equal {
