@@ -172,15 +172,18 @@ html {
 }
 
 #zero {
+  width: 57px;
   height: 47px;
   background-color: #E0E0E0;
   border-radius: 0 0 0 4px;
+  border-right-width: 0;
 }
 
 #empty {
   width: 57px;
   height: 47px;
   background-color: #E0E0E0;
+  border-left-width: 0;
 }
 
 #point {

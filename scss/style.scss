@@ -153,13 +153,14 @@ html {
 }
 
 #zero {
-  height: $btn-height;
-  background-color: $number-color;
+  @include btn($number-color);
   border-radius: 0 0 0 4px;
+  border-right-width: 0;
 }
 
 #empty {
   @include btn($number-color);
+  border-left-width: 0;
 }
 
 #point {
