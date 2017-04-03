@@ -75,6 +75,11 @@ function clear() {
   isFirstZero = true;
   isResult = false;
 
+  plus.classList.remove("selected-operator");
+  minus.classList.remove("selected-operator");
+  mult.classList.remove("selected-operator");
+  divide.classList.remove("selected-operator--divide");
+
   display();
 }
 
@@ -146,7 +151,34 @@ function operate(type) {
   }
 
   operator = type;
-  //css operator en fonction de type
+
+  switch (type) {
+    case "plus":
+      plus.classList.add("selected-operator");
+      minus.classList.remove("selected-operator");
+      mult.classList.remove("selected-operator");
+      divide.classList.remove("selected-operator--divide");
+      break;
+    case "minus":
+      plus.classList.remove("selected-operator");
+      minus.classList.add("selected-operator");
+      mult.classList.remove("selected-operator");
+      divide.classList.remove("selected-operator--divide");
+      break;
+    case "times":
+      plus.classList.remove("selected-operator");
+      minus.classList.remove("selected-operator");
+      mult.classList.add("selected-operator");
+      divide.classList.remove("selected-operator--divide");
+      break;
+    case "division":
+      plus.classList.remove("selected-operator");
+      minus.classList.remove("selected-operator");
+      mult.classList.remove("selected-operator");
+      divide.classList.add("selected-operator--divide");
+      break;
+  }
+
   screenFlash();
 }
 
@@ -202,6 +234,12 @@ function calculate() {
       }
       break;
   }
+
+  plus.classList.remove("selected-operator");
+  minus.classList.remove("selected-operator");
+  mult.classList.remove("selected-operator");
+  divide.classList.remove("selected-operator--divide");
+
   display();
 }
 
