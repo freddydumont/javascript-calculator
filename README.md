@@ -6,4 +6,4 @@ Inspired by Calculator in macOS. Has keyboard support.
 ### TODO:
 - [x] Fix bug when an operator is pressed twice in a row
 - [ ] Add visual emphasis on selected operator
-- [ ] Fix borders situation
+- [x] Fix borders situation
