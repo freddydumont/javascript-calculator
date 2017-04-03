@@ -103,6 +103,7 @@ function percentage() {
 function decimal() {
   if (!/\./.test(val)) {
     val += ".";
+    isFirstZero = false;
     display();
   }
 }
