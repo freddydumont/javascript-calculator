@@ -151,6 +151,7 @@ function operate(type) {
     }
   }
 
+  isFirstZero = false;
   operator = type;
 
   switch (type) {
