@@ -3,11 +3,9 @@ $number-color: #E0E0E0;
 $number-color-dark: #D6D6D6;
 $operator-color: #FF8E02;
 $border-color: #9F9F9F;
-$btn-width: 57px;
-$btn-height: 47px;
 @mixin btn($color) {
-  width: $btn-width;
-  height: $btn-height;
+  width: 57px;
+  height: 47px;
   background-color: $color;
 }
 
@@ -15,55 +13,6 @@ html {
   background: url("../background.jpg") no-repeat center fixed;
   background-size: cover;
   font-family: Helvetica, Arial, sans-serif;
-}
-
-//special classes for text size in screen
-.small {
-  font-size: 36px !important;
-  padding: 40px 10px 0 0 !important;
-}
-
-.smaller {
-  font-size: 24px !important;
-  padding: 50px 10px 0 0 !important;
-}
-
-.smallest {
-  font-size: 16px !important;
-  padding: 55px 10px 0 0 !important;
-}
-
-.table {
-  display: table;
-  border-collapse: collapse;
-  border-style: hidden;
-  text-align: center;
-  font-size: 18px;
-  line-height: 0;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  p {
-    margin-top: 24px;
-  }
-}
-
-.table:hover {
-  cursor: pointer;
-}
-
-.row {
-  display: table-row;
-}
-
-.cell {
-  display: table-cell;
-  padding: 0;
-  border-style: solid;
-  border-width: 1px;
-  border-color: $border-color;
 }
 
 .btn-number {
@@ -77,6 +26,24 @@ html {
 .btn-operator {
   @include btn($operator-color);
   color: white;
+}
+
+.cell {
+  display: table-cell;
+  padding: 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $border-color;
+}
+
+.container {
+  width: 231px;
+  height: 319px;
+  margin: 150px auto;
+}
+
+.row {
+  display: table-row;
 }
 
 
@@ -121,10 +88,49 @@ html {
   border-left: solid 1px $border-color;
 }
 
-.container {
-  width: 231px;
-  height: 319px;
-  margin: 150px auto;
+//special classes for text size in screen
+.small {
+  font-size: 36px !important;
+  padding: 40px 10px 0 0 !important;
+}
+
+.smaller {
+  font-size: 24px !important;
+  padding: 50px 10px 0 0 !important;
+}
+
+.smallest {
+  font-size: 16px !important;
+  padding: 55px 10px 0 0 !important;
+}
+
+.table {
+  display: table;
+  border-collapse: collapse;
+  border-style: hidden;
+  text-align: center;
+  font-size: 18px;
+  line-height: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  p {
+    margin-top: 24px;
+  }
+}
+
+.table:hover {
+  cursor: pointer;
+}
+
+#empty {
+  border-left-width: 0;
+}
+
+#equal {
+  border-radius: 0 0 4px 0;
 }
 
 #top {
@@ -145,12 +151,4 @@ html {
 #zero {
   border-radius: 0 0 0 4px;
   border-right-width: 0;
-}
-
-#empty {
-  border-left-width: 0;
-}
-
-#equal {
-  border-radius: 0 0 4px 0;
 }
