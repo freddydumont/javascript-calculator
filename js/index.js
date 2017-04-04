@@ -101,11 +101,17 @@ function percentage() {
 }
 
 function decimal() {
-  if (!/\./.test(val)) {
-    val += ".";
-    isFirstZero = false;
-    display();
+  if (firstDigitAfterOperator || isResult) {
+    val = "0.";
+    firstDigitAfterOperator = false;
+    isResult = false;
+  } else {
+    if (!/\./.test(val)) {
+      val += ".";
+    }
   }
+  isFirstZero = false;
+  display();
 }
 
 
