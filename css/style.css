@@ -72,14 +72,44 @@ html {
   color: white;
 }
 
+/*
+* This bug: https://bugs.webkit.org/show_bug.cgi?id=78215
+* "Inset box-shadow on a table cell with collapsed borders has a 1px gap",
+* Makes a box-shadow solution unusable.
+* I am using an adaptation from the pseudo-element solution found here:
+* https://css-tricks.com/snippets/css/multiple-borders/
+*/
 .selected-operator {
-  box-shadow: 1px 1px 0 1px #9F9F9F inset, 1px -1px 0 1px #9F9F9F inset;
-  border-style: hidden;
+  position: relative;
+}
+
+.selected-operator::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  border-top: solid 1px #9F9F9F;
+  border-bottom: solid 1px #9F9F9F;
+  border-left: solid 1px #9F9F9F;
 }
 
 .selected-operator--divide {
-  box-shadow: 1px -1px 0 1px #9F9F9F inset;
-  border-style: hidden;
+  position: relative;
+}
+
+.selected-operator--divide::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  border-bottom: solid 1px #9F9F9F;
+  border-left: solid 1px #9F9F9F;
 }
 
 .container {
